@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home — Vijay</title>
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#12121a" id="metaThemeColor">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewBox='0 0 128 128'%3E%3Cg fill='none' stroke='%238b5cf6' stroke-width='8'%3E%3Crect x='12' y='12' width='104' height='104' rx='24'/%3E%3Cpath d='M40 80c14 18 34 18 48 0M44 40h40' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="wallpaper" aria-hidden="true"></div>
+
+  <header class="app-header" role="banner">
+    <div class="left">
+      <span class="brand" id="brandName" title="Homepage title">Vijay</span>
+      <span id="welcomeMsg" class="welcome" aria-live="polite"></span>
+      <span class="dot" id="netDot" title="Network status" aria-live="polite"></span>
+    </div>
+
+    <div class="center">
+      <form id="searchForm" role="search" aria-label="Omni search">
+        <input id="searchInput" type="search"
+               placeholder="Search — try g: pandas groupby or so: dataframe explode"
+               autocomplete="off" spellcheck="false"
+               list="engineHints" aria-label="Search the web" />
+        <datalist id="engineHints">
+          <option value="g: " label="Google"></option>
+          <option value="d: " label="DuckDuckGo"></option>
+          <option value="y: " label="YouTube"></option>
+          <option value="w: " label="Wikipedia"></option>
+          <option value="so: " label="Stack Overflow"></option>
+          <option value="gh: " label="GitHub"></option>
+          <option value="mdn: " label="MDN Web Docs"></option>
+          <option value="py: " label="Python Docs"></option>
+          <option value="npm: " label="npm"></option>
+          <option value="hn: " label="Hacker News"></option>
+        </datalist>
+        <button class="icon-btn" type="submit" aria-label="Search" title="Search">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M21 21l-4.2-4.2M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"
+                  fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <div class="subhead">
+        <span id="clock" aria-live="polite" title="Current time"></span>
+        <button id="helpBtn" class="text-btn" type="button" aria-haspopup="dialog" title="Keyboard & search help">?</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <button id="openNotes" class="icon-btn" type="button" aria-haspopup="dialog" title="Open notepad">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M7 3h10a2 2 0 0 1 2 2v11l-5 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <path d="M14 21v-4a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M8 7h8M8 11h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button id="themeToggle" class="icon-btn" type="button" title="Toggle theme (t)">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 4V2M12 22v-2M4 12H2M22 12h-2M5 5l-1.4-1.4M20.4 20.4L19 19M19 5l1.4-1.4M5 19l-1.4 1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+      <button id="openSettings" class="icon-btn" type="button" aria-haspopup="dialog" title="Open settings">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM19.4 15a7.96 7.96 0 0 0 .1-2l2.2-1.7-2-3.5-2.7.6a8 8 0 0 0-1.7-1L12 3 10.7 5.4a8 8 0 0 0-1.7 1L6.3 5.8l-2 3.5L6.5 11a8 8 0 0 0 .1 2l-2.3 1.7 2 3.5 2.7-.6a8 8 0 0 0 1.7 1L12 21l1.3-2.4a8 8 0 0 0 1.7-1l2.7.6 2-3.5L19.4 15z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="content" role="main">
+    <section class="sections">
+      <div class="sections-head">
+        <h2>Sections</h2>
+        <div class="row-actions">
+          <button id="addSection" class="pill-btn" type="button" title="Add new section (new row)">＋ Section</button>
+          <button id="addTileGlobal" class="pill-btn" type="button" title="Add new shortcut to any section">＋ Tile</button>
+        </div>
+      </div>
+
+      <!-- Rows container -->
+      <div id="sectionsWrap" class="sections-wrap" aria-label="Rows of sections" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer" role="contentinfo">
+    <p id="footerText">Treelogic Systems</p>
+  </footer>
+
+  <!-- Settings dialog -->
+  <dialog id="settingsDialog" class="floating">
+    <form method="dialog" id="settingsForm">
+      <header class="dialog-head">
+        <h3>Settings</h3>
+        <button type="button" class="icon-btn close-btn" data-close>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <section class="grid-two">
+        <label>Title
+          <input type="text" id="setTitle" placeholder="Homepage title" autocomplete="off" spellcheck="false">
+        </label>
+        <label>Footer
+          <input type="text" id="setFooter" placeholder="Footer text" autocomplete="off" spellcheck="false">
+        </label>
+        <fieldset>
+          <legend>Theme</legend>
+          <label><input type="radio" name="theme" value="system"> System</label>
+          <label><input type="radio" name="theme" value="light"> Light</label>
+          <label><input type="radio" name="theme" value="dark"> Dark</label>
+        </fieldset>
+        <label>Accent color
+          <input type="color" id="setAccent" value="#8b5cf6">
+        </label>
+        <label>Density
+          <select id="setDensity">
+            <option value="comfortable">Comfortable</option>
+            <option value="compact">Compact</option>
+          </select>
+        </label>
+        <label>Default search engine
+          <select id="setEngine">
+            <option value="g">Google</option>
+            <option value="d">DuckDuckGo</option>
+            <option value="y">YouTube</option>
+            <option value="w">Wikipedia</option>
+            <option value="so">Stack Overflow</option>
+            <option value="gh">GitHub</option>
+            <option value="mdn">MDN</option>
+            <option value="py">Python</option>
+            <option value="npm">npm</option>
+            <option value="hn">Hacker News</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <h4>Wallpaper</h4>
+        <div class="wallpaper-chooser">
+          <label><input type="radio" name="wallpaper" value="none"> None</label>
+          <label><input type="radio" name="wallpaper" value="gradient-aurora"> Aurora</label>
+          <label><input type="radio" name="wallpaper" value="gradient-sunset"> Sunset</label>
+          <label><input type="radio" name="wallpaper" value="dynamic"> Dynamic (time-of-day)</label>
+          <label><input type="radio" name="wallpaper" value="image"> Custom image</label>
+        </div>
+        <div class="row-inline">
+          <label style="display:flex;align-items:center;gap:8px;"><input type="checkbox" id="animateBg"> Subtle animation</label>
+        </div>
+        <div class="file-row">
+          <input type="file" id="bgFile" accept="image/*">
+          <button type="button" class="text-btn" id="clearBg">Clear</button>
+        </div>
+      </section>
+
+      <section>
+        <h4>Data</h4>
+        <div class="data-row">
+          <button type="button" id="exportBtn" class="pill-btn">Export config</button>
+          <label class="pill-btn file">
+            Import config
+            <input type="file" id="importFile" accept="application/json">
+          </label>
+          <button type="button" id="resetBtn" class="pill-btn danger">Reset to defaults</button>
+        </div>
+      </section>
+
+      <footer class="dialog-foot">
+        <button type="submit" class="pill-btn primary">Save</button>
+        <button type="button" class="pill-btn" data-close>Close</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Section dialog -->
+  <dialog id="sectionDialog" class="floating">
+    <form id="sectionForm" method="dialog">
+      <header class="dialog-head">
+        <h3 id="sectionDialogTitle">Add section</h3>
+        <button type="button" class="icon-btn close-btn" data-close>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <input type="hidden" id="sectionId">
+      <label>Name
+        <input type="text" id="sectionName" required placeholder="e.g., Cloud & Dev" autocomplete="off" spellcheck="false">
+      </label>
+      <label>Colour (optional)
+        <input type="color" id="sectionColor" value="#8b5cf6">
+      </label>
+      <div class="row-inline">
+        <button type="button" class="text-btn" id="sectionColorClear">Use default</button>
+      </div>
+
+      <footer class="dialog-foot">
+        <button type="submit" class="pill-btn primary" id="sectionSaveBtn">Save</button>
+        <button type="button" class="pill-btn" data-close>Cancel</button>
+        <button type="button" class="pill-btn danger" id="sectionDeleteBtn" hidden>Delete</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Tile dialog -->
+  <dialog id="tileDialog" class="floating">
+    <form id="tileForm" method="dialog">
+      <header class="dialog-head">
+        <h3 id="tileDialogTitle">Add shortcut</h3>
+        <button type="button" class="icon-btn close-btn" data-close>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </header>
+
+      <input type="hidden" id="tileId">
+      <label>Name
+        <input type="text" id="tileName" required placeholder="e.g., Google" autocomplete="off" spellcheck="false">
+      </label>
+      <label>URL
+        <input type="text" id="tileUrl" required inputmode="url"
+               placeholder="https://example.com · google.com · name@domain.com · file:///C:/path/to/file · C:\path\to\file">
+      </label>
+      <label>Section
+        <select id="tileSection"></select>
+      </label>
+      <details class="icon-chooser">
+        <summary>Icon (optional)</summary>
+        <div class="file-row">
+          <input type="file" id="tileIconFile" accept="image/*">
+          <input type="text" id="tileIconUrl" inputmode="url" placeholder="Icon URL (https://... or data:... or file:...)">
+          <p class="muted">If no icon is provided, the site’s favicon is used automatically.</p>
+        </div>
+      </details>
+
+      <footer class="dialog-foot">
+        <button type="submit" class="pill-btn primary" id="tileSaveBtn">Save</button>
+        <button type="button" class="pill-btn" data-close>Cancel</button>
+        <button type="button" class="pill-btn danger" id="tileDeleteBtn" hidden>Delete</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- Notepad dialog -->
+  <dialog id="notepadDialog" class="floating">
+    <header class="dialog-head">
+      <h3>Notepad</h3>
+      <button type="button" class="icon-btn close-btn" data-close>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+    <section class="notes-wrap">
+      <textarea id="notesArea" placeholder="Your notes live here — saved automatically to this device." spellcheck="true"></textarea>
+      <div class="notes-actions">
+        <div class="btns">
+          <button id="notesExport" class="pill-btn" type="button">Export .txt</button>
+          <button id="notesClear" class="pill-btn danger" type="button">Clear</button>
+        </div>
+        <span id="notesSaved" class="muted" aria-live="polite"></span>
+      </div>
+    </section>
+    <footer class="dialog-foot">
+      <button type="button" class="pill-btn" data-close>Close</button>
+    </footer>
+  </dialog>
+
+  <!-- Help dialog -->
+  <dialog id="helpDialog" class="floating">
+    <header class="dialog-head">
+      <h3>Shortcuts & tips</h3>
+      <button type="button" class="icon-btn close-btn" data-close>
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+    <div class="help-grid">
+      <div>
+        <h4>Search prefixes</h4>
+        <ul class="mono">
+          <li><b>g:</b> Google</li>
+          <li><b>d:</b> DuckDuckGo</li>
+          <li><b>y:</b> YouTube</li>
+          <li><b>w:</b> Wikipedia</li>
+          <li><b>so:</b> Stack Overflow</li>
+          <li><b>gh:</b> GitHub</li>
+          <li><b>mdn:</b> MDN Web Docs</li>
+          <li><b>py:</b> Python Docs</li>
+          <li><b>npm:</b> npm</li>
+          <li><b>hn:</b> Hacker News</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Keyboard</h4>
+        <ul class="mono">
+          <li><b>Ctrl/⌘ + K</b> Focus search</li>
+          <li><b>Enter</b> Run search</li>
+          <li><b>t</b> Toggle theme</li>
+          <li><b>n</b> Add tile</li>
+          <li><b>s</b> Add section (new row)</li>
+          <li><b>Drag tiles</b> within/between sections</li>
+          <li><b>Drag section header</b> to reorder or move to a new row</li>
+        </ul>
+      </div>
+    </div>
+    <footer class="dialog-foot">
+      <button type="button" class="pill-btn" data-close>Close</button>
+    </footer>
+  </dialog>
+</body>
+</html>
